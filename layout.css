@@ -43,3 +43,115 @@ html {
 .pull-left{
     float: left !important;
 }
+
+.col-1{
+    position: relative;
+    width: 8.33333%;
+}
+
+.col-2{
+    position: relative;
+    width: 16.66667%;
+}
+
+.col-3{
+    position: relative;
+    width: 25%;
+}
+
+.col-4{
+    position:relative;
+    width:33.33333%;
+}
+
+.col-5 {
+    position: relative;
+    width: 41.66667%; 
+}
+
+.col-6 {
+    position: relative;
+    width: 50%; 
+}
+
+.col-7 {
+    position: relative;
+    width: 58.33333%; 
+}
+
+.col-8 {
+    position: relative;
+    width: 66.66667%; 
+}
+
+.col-9 {
+    position: relative;
+    width: 75%; 
+}
+
+.col-10 {
+    position: relative;
+    width: 83.33333%; 
+}
+
+.col-11 {
+    position: relative;
+    width: 91.66667%; 
+}
+
+.col-12 {
+    position: relative;
+    width: 100%; 
+}
+
+.col-offset-1 {
+    position: relative;
+    margin-left: 8.33333%; 
+}
+
+.col-offset-2 {
+    position: relative;
+    margin-left: 16.66667%; 
+}
+
+.col-offset-3 {
+    position: relative;
+    margin-left: 25%; 
+}
+
+.col-offset-4 {
+    position: relative;
+    margin-left: 33.33333%; 
+}
+
+.col-offset-5 {
+    position: relative;
+    margin-left: 41.66667%; 
+}
+
+.col-offset-6 {
+    position: relative;
+    margin-left: 50%; 
+}
+
+.col-offset-7 {
+    position: relative;
+    margin-left: 58.33333%; 
+}
+
+.col-offset-8 {
+    position: relative;
+    margin-left: 66.66667%; 
+}
+
+.col-offset-9 {
+    position: relative;
+    margin-left: 75%; 
+}
+
+.col-offset-10 {
+    position: relative;
+    margin-left: 83.33333%; 
+}
+
+
