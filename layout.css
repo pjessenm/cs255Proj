@@ -47,6 +47,16 @@ html {
 button:hover{
     background-color:#049cdb;
     border-color:#000000;
+    border-width:1px;
+}
+
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #000000;
 }
 
 .sidebar{

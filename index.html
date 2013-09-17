@@ -12,10 +12,8 @@
             <div class="nav">
                 <img src="compIcon.png" width=150px"/>
                 <h1>CSS255 Computer Store</h1>
-                <div class="nav-btn-group">
-                    <button>buttonasdfadsf 1</button>
-                    <button>button 2</button>
-                    <button>button 3</button>
+                <div class="nav-btn-group" data-bind="foreach: sections">
+                    <button><a data-bind="attr: { href:  $data + '.html' }, text:$data"></a></button>
                 </div>
             </div>        
             <!-- end nav !-->
