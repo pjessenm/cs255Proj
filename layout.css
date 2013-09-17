@@ -12,6 +12,7 @@ html {
     max-height: 200px;
     padding-left:15px;
     padding-right:15px;
+    padding-bottom:15px;
     background-color:#cccccc;
 }
 
@@ -37,63 +38,84 @@ html {
     float: left !important;
 }
 
-.col-1{
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
     position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    float: left;
+}
+
+.col-1{
     width: 8.33333%;
 }
 
 .col-2{
-    position: relative;
     width: 16.66667%;
 }
 
 .col-3{
-    position: relative;
     width: 25%;
 }
 
 .col-4{
-    position:relative;
     width:33.33333%;
 }
 
 .col-5 {
-    position: relative;
     width: 41.66667%; 
 }
 
 .col-6 {
-    position: relative;
     width: 50%; 
 }
 
 .col-7 {
-    position: relative;
     width: 58.33333%; 
 }
 
 .col-8 {
-    position: relative;
     width: 66.66667%; 
 }
 
 .col-9 {
-    position: relative;
     width: 75%; 
 }
 
 .col-10 {
-    position: relative;
     width: 83.33333%; 
 }
 
-.col-11 {
-    position: relative;
+.col-11 {    
     width: 91.66667%; 
 }
 
 .col-12 {
-    position: relative;
     width: 100%; 
 }
 
@@ -147,4 +169,21 @@ html {
     margin-left: 83.33333%; 
 }
 
+.nav-btn-group button{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+}
 
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:0px;
+}
