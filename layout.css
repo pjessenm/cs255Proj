@@ -44,6 +44,22 @@ html {
     border-radius:0 120px 0 120px;
 }
 
+.sidebar{
+    position:relative;
+    float:left;
+    width:15%;
+    height:80%;
+    background-color:#ccc000;
+}
+
+.main-content{
+    position:relative;
+    margin-left:15%;
+    width:85%;
+    height:80%;
+    background-color:#bbbccc;
+    }
+
 button:hover{
     background-color:#049cdb;
     border-color:#000000;
@@ -58,22 +74,7 @@ a {
 a:hover{
     color: #000000;
 }
-
-.sidebar{
-    position:relative;
-    float:left;
-    width:15%;
-    background-color:#ccc000;
-}
-
-.main-content{
-    position:relative;
-    margin-left:15%;
-    width:85%;
-    height:85%;
-    background-color:#bbbccc;
-    }
-
+    
 .pull-right{
     float:right !important;
 }
@@ -214,7 +215,7 @@ a:hover{
 }
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left:0px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left:0px;
 }
