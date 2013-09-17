@@ -27,6 +27,28 @@ html {
     padding-right:25px;
 }
 
+.nav-btn-group{
+    padding-top:25px;
+}
+
+.nav-btn-group button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius:0 120px 0 120px;
+}
+
+button:hover{
+    background-color:#049cdb;
+    border-color:#000000;
+}
+
 .sidebar{
     position:relative;
     float:left;
@@ -179,21 +201,6 @@ html {
 .col-offset-10 {
     position: relative;
     margin-left: 83.33333%; 
-}
-
-.nav-btn-group{
-    padding-top:25px;
-}
-.nav-btn-group button{
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
 }
 
 .container {
