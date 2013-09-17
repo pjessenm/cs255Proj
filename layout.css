@@ -10,30 +10,23 @@ html {
 
 .nav {
     max-height: 200px;
-    border-style: solid;
-    border-width: 1px;
     padding-left:15px;
     padding-right:15px;
     background-color:#cccccc;
-    border-bottom-color:transparent;
-    padding-bottom:5px;
 }
 
 .sidebar{
     position:relative;
     float:left;
     width:10%;
-    border-style: solid;
-    border-width:1px;
+    background-color:#ccc000;
 }
 
 .main-content{
     position:relative;
     margin-left:10%;
     width:90%;
-    border-style: solid;
-    border-width:1px;    
-    border-left-color:transparent;
+    background-color:#bbbccc;
 }
 
 .pull-right{
