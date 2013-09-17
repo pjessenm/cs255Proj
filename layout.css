@@ -9,26 +9,38 @@ html {
 }
 
 .nav {
-    max-height: 200px;
+    max-height: 15%;
     padding-left:15px;
     padding-right:15px;
     padding-bottom:15px;
     background-color:#cccccc;
+    display:block;
+    overflow:hidden;
+}
+
+.nav img{
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    position: relative;
+    float:left;
+    padding-right:25px;
 }
 
 .sidebar{
     position:relative;
     float:left;
-    width:10%;
+    width:15%;
     background-color:#ccc000;
 }
 
 .main-content{
     position:relative;
-    margin-left:10%;
-    width:90%;
+    margin-left:15%;
+    width:85%;
+    height:85%;
     background-color:#bbbccc;
-}
+    }
 
 .pull-right{
     float:right !important;
@@ -169,13 +181,15 @@ html {
     margin-left: 83.33333%; 
 }
 
+.nav-btn-group{
+    padding-top:25px;
+}
 .nav-btn-group button{
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: bold;
-  line-height: 1.428571429;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
