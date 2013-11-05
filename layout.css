@@ -1,5 +1,6 @@
 html {
-  font-family: sans-serif;
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size:.8em;
 }
 
 .inner-content{
@@ -28,11 +29,18 @@ html {
 }
 
 .nav-btn-group{
-    padding-top:25px;
+    padding-top:50px;
+    margin-left:220px;
 }
 
-.nav-btn-group button{
+.topArea{
+    height:38px;
+}
+
+.cartBtn{
     display: inline-block;
+    float:right;
+    position:relative;
     padding: 6px 12px;
     margin-bottom: 0;
     font-size: 14px;
@@ -41,6 +49,23 @@ html {
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
+
+}
+
+.nav-btn-group a{
+    display: inline-block;
+    float:left;
+    position:relative;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    margin-right:4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border:solid;
 }
 
 .sidebar{
@@ -48,7 +73,7 @@ html {
     float:left;
     width:15%;
     height:80%;
-    background-color:#d5e1dd;
+    background-color:#9B9B8C;
 }
 
 .main-content{
@@ -73,13 +98,14 @@ html {
     padding-right:10%;
 }
 
+.sidebar h3{
+    margin-left:8px;
+    margin-bottom:1px;
+}
+
 .sidebar li{
-    padding: 3px 10px 3px 5px;
-    margin-top:3px;
-    margin-bottom:4px;
-    background-color:#d5e1aa;
-    border-style:solid;
-    border-width:1px;  
+    padding: 1px 10px 1px 5px;
+    font-size:1em;
 }
 
 button:hover{
@@ -255,7 +281,7 @@ a:hover{
     padding-bottom:10px;
     background-color:#F7F3E8;
     height:140px;
-    overflow-x:scroll;
+    overflow-x:auto;
 }
 
 .featured-item {

@@ -24,12 +24,21 @@
             <!-- begin sidebar !-->
             <div class="sidebar">
                 <div>
-                    <h3>By Manufacturer (<b data-bind="text: desktops.length"></b>)</h3>
+                    <h3>By Manufacturer (<b data-bind="text: accessories.length"></b>)</h3>
                 </div>
-
-                <ul class="" data-bind="foreach: desktops">
+                <ul class="" data-bind="foreach: accessories">
                     <li><a data-bind="attr: { href:  $data + '.html' }, text:$data"></a></li>
                 </ul>
+                
+                <div>
+                    <h3>Price</h3>
+                    <ul>
+                        <li>$0 - $99</li>
+                        <li>$100 - $149</li>
+                        <li>$150 - $199</li>
+                        <li>$199+</li>
+                    </ul>
+                </div>
             </div>
             <!-- end sidebar !-->
 
@@ -37,14 +46,15 @@
             <div class="main-content">
             <br>
                 <div class="container">
-                    <div data-bind="foreach: deskTopObs" class="col-3">
-                        <h1 data-bind="text: name"></h1>
-                        <h3 data-bind="text: price"></h3>
-                        <img data-bind="attr:{src: src}" width="100px">
-                        <p data-bind="text: desc"></p>
+  
+                    <h3>This is where the <strong>main</strong> content will go</h3>
+                    <div class="col-1">
+                        <p>Checking that the grid system works</p>
+                    </div>
+                    <div class="col-offset-5 col-3">
+                        <p>another check on the grid system</p>
                     </div>
                 </div>
-                <br><br><br>
             </div>
             <!-- end end content !-->
             
@@ -52,30 +62,11 @@
         
 		<!-- knockout bindings -->
 		<script>
+        
 			function AppViewModel() {
 				this.title = ko.observable("CIS255 Computer Store");			
 				this.sections  = ["Computers", "Laptops", "Accessories", "Contact"];
-                this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
-                this.deskTopObs = [
-                    {
-                        name: "HP Desktop 1",
-                        src: "computers/hp1.png",
-                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
-                        price:"$500"
-                    },
-                    {
-                        name: "HP Desktop 2",
-                        src: "computers/hp2.png",
-                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
-                        price:"$500"
-                    },
-                    {
-                        name: "HP Desktop 3",
-                        src: "computers/hp3.jpg",
-                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
-                        price:"$500"
-                    }
-                ]
+                this.accessories = ["Razer", "Steel Series", "Acer", "HP", "Lenovo", "Microsoft"];
 			}
 
 			ko.applyBindings(new AppViewModel());

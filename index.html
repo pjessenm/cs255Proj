@@ -7,13 +7,15 @@
     </head>
     <body>
         <div class="inner-content">
-        
+            <div class="topArea">
+                <div class="cartBtn"><button><a href="cart.html">Cart</a></button></div>
+            </div>
             <!-- begin nav !-->
             <div class="nav">
                 <a href="index.html"><img src="compIcon.png" width=150px"/></a>
                 <h1>CSS255 Computer Store</h1>
                 <div class="nav-btn-group" data-bind="foreach: sections">
-                    <button><a data-bind="attr: { href:  $data + '.html' }, text:$data"></a></button>
+                    <a data-bind="attr: { href:  $data + '.html' }, text:$data"></a>
                 </div>
             </div>        
             <!-- end nav !-->
@@ -111,9 +113,7 @@
 		<!-- knockout bindings -->
 		<script>
 			function AppViewModel() {
-				this.title = ko.observable("CIS255 Computer Store");
-				this.sections = ko.observableArray();
-				
+				this.title = ko.observable("CIS255 Computer Store");			
 				this.sections  = ["Computers", "Laptops", "Accessories", "Contact"]
 			}
 
