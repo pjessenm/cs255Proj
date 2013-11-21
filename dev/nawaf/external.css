@@ -1,0 +1,163 @@
+* {
+	font-family:sans-serif;
+}
+/*body section*/
+body {
+	padding:0;
+	margin:0;
+}
+/*wrapper section*/
+#wrapper {
+	width:840px;
+	margin:0 auto;
+}
+
+/*navigation*/
+ul#navigation {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+/*navigation*/
+ul#navigation li {
+	float:left;
+}
+/*navigation*/
+ul#navigation li a {
+	display:block;
+	width:120px;
+	text-align:center;
+	background-color:#99F;
+	color:#FFF;
+	padding:5px 0;
+	text-decoration:none;
+}
+/*navigation*/
+ul#navigation li a:hover {
+	background:#99F;
+}
+/*container*/
+#container {
+	width:100%;
+	padding-top:10px;
+	clear:both;
+}
+/*side bar*/
+#sidebar {
+	float:left;
+	width:178px;
+	padding:20px 0;
+	border: 1px solid #39F;
+}
+/*content section*/
+#content {
+	float:left;
+	width:520px;
+	padding:0 20px;
+}
+/*navigation*/
+ul#navigation2 {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+/*navigation*/
+ul#navigation2 li a {
+	display:block;
+	padding:5px 20px;
+	text-decoration:none;
+	color:#000;
+}
+/*navigation*/
+ul#navigation2 li a:hover {
+	background:#99F;
+}
+/*table*/
+table {
+	border-collapse:collapse;
+	width:150%;
+}
+/*table th td*/
+table, th, td {
+	border: 1px solid #39F;
+}
+/*table th*/
+th {
+	height:50px;
+	background-color:#39F;
+	color:#FFF;
+}
+/*table td*/
+td {
+	padding:10px;
+}
+/*field set*/
+#sampleform fieldset {
+	border:1px solid #39F;
+}
+/*legend*/
+#sampleform legend {
+	color:#99F;
+}
+/*form row*/
+#sampleform .form-row {
+	margin:10px 0;
+	padding:10px;
+	border-bottom:1px dashed #39F;
+}
+/*label of form row*/
+#sampleform .form-row label {
+	width:130px;
+	display:inline-block;
+	font-weight:bold;
+}
+/*css form section*/
+#sampleform .form-row .text {
+	width:250px;
+	padding:5px;
+	font-size:1.1em;
+}
+/*do animation key frame*/
+@keyframes doanimate
+{
+0% {background: #FFF;left:0px;}
+70% {background: #39F;left:400px;}
+100% {background: #FFF;left:0px;}
+}
+/*do animation*/
+@-webkit-keyframes doanimate
+{
+0% {background: #FFF;left:0px;}
+70% {background: #39F;left:400px;}
+100% {background: #FFF;left:0px;}
+}
+/*animation object*/
+#sampleanimation {
+	position:relative;
+	height:100px;
+}
+/*animation item*/
+#anitem {
+	width:200px;
+	height:100px;
+	padding:20px 10px;
+	text-align:center;
+	border:1px solid #CCC;
+	left:0px;
+	top:0px;
+	position:absolute;
+	
+	animation-name: doanimate;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: doanimate;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+/*footer secion*/
+#footer{
+	text-align: center; /*center text*/
+}

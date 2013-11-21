@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="author" content="Ståle Refsnes">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="external.css" media="screen" />
+<title>Computer Store</title>
+<script type="text/javascript">
+	//function to change image in animation
+	var changeIndex = 0;
+	function changeImg() {
+		changeIndex = (changeIndex+1)%5; /*picture index = 0 to 4*/
+		document.getElementById("changeImg").src = changeIndex + '.png';
+	}
+	//set changing in 4 seconds
+	setInterval(changeImg, 4000); 
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- title -->
+		<h1 id="title">Computer Store</h1>
+		<!-- CSS Navigation -->
+		<ul id="navigation">
+			<li><a href="#home">Home</a></li>					
+			<li><a href="#css3animation">Animation</a></li>
+			<li><a href="#csstable">Products</a></li>
+		</ul>
+		<!-- container -->
+		<div id="container">
+			<!-- side bar -->
+			<div id="sidebar">	
+				<ul id="navigation2">
+					<li><a href="#home">Home</a></li>					
+					<li><a href="#css3animation">Animation</a></li>
+					<li><a href="#csstable">Products</a></li>
+				</ul>
+			</div>
+			<!-- content -->
+			<div id="content">
+				<p id="css3animation"></p><!--CSS3 Animation -->
+				<div id="sampleanimation">
+					<div id="anitem"><img src="1.png" id="changeImg" alt=""/></div>
+				</div>
+				<br/>				
+				<h2 id="csstable"></h2>
+				<br/><br/>
+				<!-- product table -->
+				<table id="sampletable">
+					<tr>
+						<th>Operating System</th>
+						<th>Processor</th>
+						<th>RAM</th>
+						<th>Hard Drive</th>	
+					</tr>
+					<tr>
+						<td><input type="radio" checked="checked" name="OS" value="230"/>Windows 7 Home $250</td>
+						<td><input type="radio" checked="checked" name="processors" value="499"/>Intel i7 $199.0</td>
+						<td><input type="radio" checked="checked" name="RAM" value="45.9"/>4 GB $44.9</td>
+						<td><input type="radio" checked="checked" name="HD" value="34.6"/>200 GB $44.6</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="OS" value="178.9"/>Windows 8 $444.3</td>
+						<td><input type="radio" name="processors" value="243.9"/>Intel i3 $113.9</td>
+						<td><input type="radio" name="RAM" value="44.9"/>8 GB $104.9</td>
+						<td><input type="radio" name="HD" value="45.9"/>500 GB $45.9</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="OS" value="243.9"/>Windows XP $443.9</td>
+						<td><input type="radio" name="processors" value="222.9"/>Intel i5 $145.9</td>
+						<td><input type="radio" name="RAM" value="32.9"/>6GB $32.9</td>
+						<td><input type="radio" name="HD" value="44.9"/>750GB $44.9</td>
+					</tr>	
+				</table>				
+				<br/>
+				<!-- total price -->
+				<div id="total"></div>
+				<br/>
+				<!-- contact form -->
+				<h2 id="cssform"></h2><!-- CSS Form-->
+				<form id="sampleform" method="post" action="main.html">
+					<fieldset>
+						<legend>User</legend>
+						
+						<div class="form-row">
+							<label for="name">Name:</label>
+							<input type="text" name="name" id="name" class="text" />
+						</div>
+						
+						<div class="form-row">
+							<label for="email">Email:</label>
+							<input type="text" name="email" id="email" class="text" />
+						</div>
+						
+						<div class="form-row">
+							<label for="gender1">Gender:</label>
+							<input type="radio" name="gender" id = "gender1" checked="checked" value="male" /> Male
+							<input type="radio" name="gender" id = "gender2" value="female" /> Female
+						</div>
+						
+					</fieldset>
+					
+					<div>
+						<input type="submit" value="Submit" />
+						<input type="reset" value="Reset form" />
+					</div>
+				</form>
+			</div>	
+
+			<div style="clear:both"></div>
+		</div>		
+		<div id="footer">Computer Store Copyright</div>
+		<br/>
+	</div>
+<script type="text/javascript">
+	setInterval(changeImg, 6000); 
+</script>
+</body>
+</html>
