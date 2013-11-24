@@ -19,6 +19,26 @@ html {
     overflow:hidden;
 }
 
+.menuNav{
+    display:inline;
+}
+
+.menuNav li{
+    margin:0;
+    padding:0;
+    height:15px !important;
+    list-style-type:none;
+}
+
+.menuItem{
+    text-align:center;
+}
+
+.topArea h1{
+    margin-bottom:500px;
+    display:inline;
+}
+
 .nav img{
     display: inline-block;
     height: auto;
@@ -364,4 +384,31 @@ a:hover{
     float:left;
     display: block;
     position:relative;
+}
+
+/*table*/
+table {
+	border-collapse:collapse;
+	width:95%;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+/*table th td*/
+table, th, td {
+	border: 1px solid #39F;
+}
+/*table th*/
+th {
+	height:50px;
+	background-color:#39F;
+	color:#FFF;
+}
+/*table td*/
+td {
+	padding:10px;
+}
+
+#navigation a{
+    font-size:1.6em;
 }
