@@ -13,6 +13,34 @@
                     'speed': 250
                 });
             }); // end ready
+            
+            var total = 0.00;
+            var proc = 0.00;
+            var ram = 0.00;
+            var os = 0.00;
+            var hdd = 0.00;
+            
+            function calcTotal (name, amount){
+                if(name.toString() == 'OS'){
+                    os = amount;
+                }
+                
+                if(name.toString() == 'processors'){
+                    proc = amount;
+                }
+                
+                if(name.toString() == 'RAM'){
+                    ram = amount;
+                }
+                
+                if(name.toString() == 'HD'){
+                    hdd = amount;
+                }
+                
+                total = os + proc + ram + hdd;
+                $("#total").val('$' + total);
+                
+            };
         </script>
     </head>
     <body>
@@ -29,7 +57,6 @@
 							</ul>
 						</li>
 						<li class="menuItem"><a href="custom.html"><img src="../icons/cart.png"/>Custom</a></li>
-						<li class="menuItem"><a href="accessories.html"><img src="../icons/game.png"/>Accessories</a></li>
 						<li class="menuItem"><a href="contact.html"><img src="../icons/envelope.png"/>Contact</a></li>
 					</ul>
 				</div>       
@@ -38,16 +65,9 @@
             
             <!-- begin sidebar !-->
             <div class="sidebar">
-                
-                <div>
-                    <h3>Price</h3>
-                    <ul>
-                        <li>$0 - $99</li>
-                        <li>$100 - $149</li>
-                        <li>$150 - $199</li>
-                        <li>$199+</li>
-                    </ul>
-                </div>
+                <ul class="" data-bind="foreach: sections">
+                    <li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
+                </ul>
             </div>
             <!-- end sidebar !-->
 
@@ -65,24 +85,32 @@
 						<th>Hard Drive</th>	
 					</tr>
 					<tr>
-						<td><input type="radio" checked="checked" name="OS" value="230"/>Windows 7 Home $250</td>
-						<td><input type="radio" checked="checked" name="processors" value="499"/>Intel i7 $199.0</td>
-						<td><input type="radio" checked="checked" name="RAM" value="45.9"/>4 GB $44.9</td>
-						<td><input type="radio" checked="checked" name="HD" value="34.6"/>200 GB $44.6</td>
+						<td><input type="radio" name="OS" onclick='calcTotal(name, 250)'/>Windows 7 Home $250</td>
+						<td><input type="radio" name="processors" onclick='calcTotal(name, 199)'/>Intel i7 $199</td>
+						<td><input type="radio" name="RAM" onclick='calcTotal(name, 45)'/>4 GB $45</td>
+						<td><input type="radio" name="HD" onclick='calcTotal(name, 45)'/>200 GB $45</td>
 					</tr>
 					<tr>
-						<td><input type="radio" name="OS" value="178.9"/>Windows 8 $444.3</td>
-						<td><input type="radio" name="processors" value="243.9"/>Intel i3 $113.9</td>
-						<td><input type="radio" name="RAM" value="44.9"/>8 GB $104.9</td>
-						<td><input type="radio" name="HD" value="45.9"/>500 GB $45.9</td>
+						<td><input type="radio" name="OS" onclick='calcTotal(name, 444)'/>Windows 8 $444</td>
+						<td><input type="radio" name="processors" onclick='calcTotal(name, 113)'/>Intel i3 $113</td>
+						<td><input type="radio" name="RAM" onclick='calcTotal(name, 104)'/>8 GB $104</td>
+						<td><input type="radio" name="HD" onclick='calcTotal(name, 45)'/>500 GB $45</td>
 					</tr>
 					<tr>
-						<td><input type="radio" name="OS" value="243.9"/>Windows XP $443.9</td>
-						<td><input type="radio" name="processors" value="222.9"/>Intel i5 $145.9</td>
-						<td><input type="radio" name="RAM" value="32.9"/>6GB $32.9</td>
-						<td><input type="radio" name="HD" value="44.9"/>750GB $44.9</td>
+						<td><input type="radio" name="OS" onclick='calcTotal(name, 443)'/>Windows XP $443</td>
+						<td><input type="radio" name="processors" onclick='calcTotal(name, 145)'/>Intel i5 $145</td>
+						<td><input type="radio" name="RAM" onclick='calcTotal(name, 32)'/>6GB $32</td>
+						<td><input type="radio" name="HD" onclick='calcTotal(name, 44)'/>750GB $44</td>
 					</tr>	
 				</table>				
+                <br/><br/>
+                
+                <div>
+                    
+                </div>
+                <div class="pull-right">
+                    <Label><strong>Total:</strong></Label><input type='text' disabled='disabled' id='total'></input>
+                </div>
                 
                 </div>
             </div>
@@ -96,60 +124,11 @@
             
 			function AppViewModel() {
 				this.title = ko.observable("CIS255 Computer Store");			
-				this.sections  = ["Computers", "Custom", "Accessories", "Contact"];
-                this.accessories = ["Razer", "Steel Series", "Acer", "HP", "Lenovo", "Microsoft"];
-                this.selectedOS = ko.observable();
-                this.opSys = [
-                    {
-                        name: "Windows 7 Home",
-                        price:"$250"
-                    },{
-                        name: "Windows 8",
-                        price:"$444"
-                    },{
-                        name: "Windows XP",
-                        price:"$443"
-                    }
-                ];
-                this.procs = [
-                    {
-                        name: "Intel i3",
-                        price: "113.99"
-                    },{
-                        name: "Intel i5",
-                        price: "145.99"
-                    },{
-                        name: "Intel i7",
-                        price: "199.99"
-                    }
-                ];
-                this.ram = [
-                    {
-                        name: "4gb",
-                        price: "32.99"
-                    },{
-                        name: "6gb",
-                        price: "45.99"
-                    },{
-                        name: "8gb",
-                        price: "104.99"
-                    }
-                ];
-                this.hdd = [
-                    {
-                        name: "250gb",
-                        price: "32.99"
-                    },{
-                        name: "500gb",
-                        price: "65.99"
-                    },{
-                        name: "1tb",
-                        price: "85.99"
-                    }
-                ];
-			}
-
+				this.sections  = ["Computers", "Custom", "Contact"];
+                this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
+            }
 			ko.applyBindings(new AppViewModel());
+            
 		</script>
 		<!-- end knockout bindings -->
     </body>
