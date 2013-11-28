@@ -472,13 +472,31 @@ td {
 
 .sideInfo{
 	position:absolute;
-	margin-top:500px;
+	margin-top:350px;
 	font-size:1.1em;
 	padding-left:10px;
+	text-align:center;
 }
 
 .sideInfo h2{
 	margin-bottom:5px;
+	text-align:center;
+}
+
+.sideInfo h4{
+	margin:0;
+	padding:0;
+}
+
+.sideInfo img{
+	padding-top:10px;
+}
+
+.sideIcons img{
+	width: 24px;
+	height: 26px;
+	vertical-align: middle;
+	margin-right: 2px;
 }
 
 .faq{

@@ -68,6 +68,22 @@
                 <div class="" data-bind="foreach: sections">
                     <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
                 </div>
+				<div class='sideInfo'>
+					<h2>Contact us 24/7</h2>
+					<h4>compStore@cis255.com</h4>
+					<h4>(123) 543-1235</h4><br/>
+					<div class="sideIcons">
+						<img src="../images/facebook.png"/>
+						<img src="../images/twitter.png"/>
+						<img src="../images/instagram.png" />
+						<img src="../images/google-plus.png"/>
+						<img src="../images/pinterest.png"/>
+						<img src="../images/youtube.png"/>
+						<img src="../images/rss.png"/>
+					</div>
+					<img src="../images/payments.gif" width:100px;/>
+				</div>
+				
             </div>
             <!-- end sidebar !-->
 
@@ -124,7 +140,7 @@
             
 			function AppViewModel() {
 				this.title = ko.observable("CIS255 Computer Store");			
-				this.sections  = ["Computers", "Custom", "Contact"];
+				this.sections  = ["Computers", "Custom", "Contact", "FAQ"];
                 this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
             }
 			ko.applyBindings(new AppViewModel());
