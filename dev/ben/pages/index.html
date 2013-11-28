@@ -22,14 +22,14 @@
 				<div class="nav">
 					<a href="../pages/index.html"><img src="../images/compIcon.png" width=150px"/></a>
 					<ul id="navigation" >
-						<li class="menuItem"><a href="index.html"><img src="../icons/home.png"/>Home</a></li>
-						<li class="menuItem"><a href="computers.html"><img src="../icons/compu.png"/>Computers</a>
+						<li class="menuItem"><a href="index.html">Home</a></li>
+						<li class="menuItem"><a href="computers.html">Computers</a>
 							<ul data-bind="foreach:desktops">
 								<li class="droplink"><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
 							</ul>
 						</li>
-						<li class="menuItem"><a href="custom.html"><img src="../icons/cart.png"/>Custom</a></li>
-						<li class="menuItem"><a href="contact.html"><img src="../icons/envelope.png"/>Contact</a></li>
+						<li class="menuItem"><a href="custom.html">Custom</a></li>
+						<li class="menuItem"><a href="contact.html">Contact</a></li>
 					</ul>
 				</div>       
 			</div>
@@ -37,90 +37,23 @@
             
             <!-- begin sidebar !-->
             <div class="sidebar">
-                <ul class="" data-bind="foreach: sections">
-                    <li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
-                </ul>
+                <div data-bind="foreach: sections">
+                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                </div>
+				<div class='sideInfo'>
+					<h2>Contact us 24/7</h2>
+					<strong>compStore@cis255.com</strong><br/>
+					<strong>(123) 543-1235</strong><br/>
+					
+				</div>
             </div>
             <!-- end sidebar !-->
 
             <!-- begin main content !-->
             <div class="main-content">
-            <br>
-                <div class="container">
-                    <div class="featured">
-                        <div class="featured-item">
-                            <p>COMPUTER</p>
-                            <img src="../images/winbox.png">
-                            <ul>
-                                <li>3.4ghz</li>
-                                <li>256gb SSD</li>
-                                <li>16gb RAM</li>
-                                <li>video card</li>
-                            </ul>
-                        </div>
-                        <div class="featured-item">
-                            <p>COMPUTER</p>
-                            <img src="../images/winbox.png">
-                            <ul>
-                                <li>3.4ghz</li>
-                                <li>256gb SSD</li>
-                                <li>16gb RAM</li>
-                                <li>video card</li>
-                            </ul>
-                        </div>
-                        <div class="featured-item">
-                            <p>COMPUTER</p>
-                            <img src="../images/winbox.png">
-                            <ul>
-                                <li>3.4ghz</li>
-                                <li>256gb SSD</li>
-                                <li>16gb RAM</li>
-                                <li>video card</li>
-                            </ul>
-                        </div>
-                        <div class="featured-item">
-                            <p>COMPUTER</p>
-                            <img src="../images/winbox.png">
-                            <ul>
-                                <li>3.4ghz</li>
-                                <li>256gb SSD</li>
-                                <li>16gb RAM</li>
-                                <li>video card</li>
-                            </ul>
-                        </div>
-                        <div class="featured-item">
-                            <p>COMPUTER</p>
-                            <img src="../images/winbox.png">
-                            <ul>
-                                <li>3.4ghz</li>
-                                <li>256gb SSD</li>
-                                <li>16gb RAM</li>
-                                <li>video card</li>
-                            </ul>
-                        </div>
-                        <div class="featured-item">
-                            <p>COMPUTER</p>
-                            <img src="../images/winbox.png">
-                            <ul>
-                                <li>3.4ghz</li>
-                                <li>256gb SSD</li>
-                                <li>16gb RAM</li>
-                                <li>video card</li>
-                            </ul>
-                        </div>
-
-                        
-                        
-                    </div>
-                    <h3>This is where the <strong>main</strong> content will go</h3>
-                    <div class="col-1">
-                        <p>Checking that the grid system works</p>
-                    </div>
-                    <div class="col-offset-5 col-3">
-                        <p>another check on the grid system</p>
-                    </div>
-                </div>
-            </div>
+			
+			
+			</div>
             <!-- end end content !-->
             
         </div>
@@ -131,7 +64,7 @@
             
 				this.title = ko.observable("CIS255 Computer Store");			
                 this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"]
-				this.sections  = ["Computers", "Custom", "Contact"]
+				this.sections  = ["Computers", "Custom", "Contact", "FAQ"]
 			}
 
 			ko.applyBindings(new AppViewModel());

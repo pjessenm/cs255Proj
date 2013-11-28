@@ -21,9 +21,6 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
 	padding-top:4px;
 }
 
-.menuItem{
-}
-
 .menuItem li{
 	width:160px !important;
 	margin-right:auto;
@@ -84,6 +81,7 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
     width:15%;
     height:80%;
     background-color:#9B9B8C;
+	padding-top:10px;
 }
 
 .main-content{
@@ -92,12 +90,22 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
     width:85%;
     height:80%;
     background-color:#ffffff;
+	overflow-y:auto;
 }
 
 .sidebar a{
     color:2b3e42;   
     text-overflow:ellipsis;
     white-space:nowrap;
+}
+
+.sidebar button{
+	text-align:center;
+	font-size:1.4em;
+	width:150px;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
 }
 
 .sidebar ul{
@@ -403,17 +411,45 @@ td {
     display:inline-block;
 }
 
-#navigation a{
-    font-size:1.6em;
-	margin-top:10px;
+#navigation ul, #navigation li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
-
-#navigation img{
-	margin-right:3px;
-	margin-top:5px;
-	padding-right:4px;
-    margin-bottom:5px;  
-	height:20px;
+#navigation a {
+	background-color: rgb(204,204,204);
+	text-decoration: none;
+	font: 16px 'ColaborateLightRegular', Arial, sans-serif;
+	text-indent: 10px;
+	border-top: 1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:1px solid #999;
+	border-bottom:1px solid #999;
+	margin: 0px;
+	padding: 0px;
+	color: rgb(53,75,118);
+}
+#navigation a:hover {
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	background-color: #555;
+	color: white;
+}
+#navigation .stack > a {
+	background-image: url(images/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 97% 8px;
+}
+#navigation .stack > a:hover {
+	background-position: 97% -78px;
+}
+#navigation ul .stack > a {
+	background-position: 97% -21px;
+}
+#navigation ul .stack > a:hover {
+	background-position: 97% -54px;
 }
 
 .title{
@@ -432,4 +468,27 @@ td {
 	text-shadow: 0px 2px 3px #555;
 	font-size:2em;
     text-align:center;
+}
+
+.sideInfo{
+	position:absolute;
+	margin-top:500px;
+	font-size:1.1em;
+	padding-left:10px;
+}
+
+.sideInfo h2{
+	margin-bottom:5px;
+}
+
+.faq{
+	padding-left:10px;
+}
+
+.faq h2{
+	color:blue;
+}
+
+.faq h3{
+	color:black;
 }

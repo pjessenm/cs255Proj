@@ -65,9 +65,9 @@
             
             <!-- begin sidebar !-->
             <div class="sidebar">
-                <ul class="" data-bind="foreach: sections">
-                    <li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
-                </ul>
+                <div class="" data-bind="foreach: sections">
+                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                </div>
             </div>
             <!-- end sidebar !-->
 

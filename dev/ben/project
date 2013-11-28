@@ -1,0 +1,61 @@
+<NotepadPlus>
+    <Project name="255">
+        <Folder name="proj">
+            <Folder name="dev">
+                <Folder name="ben">
+                    <Folder name="computers">
+                        <File name="computers\h5.png" />
+                        <File name="computers\h6.png" />
+                        <File name="computers\hp1.png" />
+                        <File name="computers\hp2.png" />
+                        <File name="computers\hp3.jpg" />
+                        <File name="computers\hp4.png" />
+                    </Folder>
+                    <Folder name="css">
+                        <File name="css\layout.css" />
+                    </Folder>
+                    <Folder name="icons">
+                        <File name="icons\cart.png" />
+                        <File name="icons\compu.png" />
+                        <File name="icons\envelope.png" />
+                        <File name="icons\game.png" />
+                        <File name="icons\home.png" />
+                    </Folder>
+                    <Folder name="images">
+                        <File name="images\compIcon.png" />
+                        <File name="images\winbox.png" />
+                    </Folder>
+                    <Folder name="pages">
+                        <File name="pages\accessories.html" />
+                        <File name="pages\acer.html" />
+                        <File name="pages\asus.html" />
+                        <File name="pages\computers.html" />
+                        <File name="pages\contact.html" />
+                        <File name="pages\custom.html" />
+                        <File name="pages\dell.html" />
+                        <File name="pages\hp.html" />
+                        <File name="pages\index.html" />
+                        <File name="pages\lenovo.html" />
+                        <File name="pages\sony.html" />
+                    </Folder>
+                    <Folder name="scripts">
+                        <File name="scripts\dropdown.js" />
+                        <File name="scripts\jquery.js" />
+                        <File name="scripts\knockout.js" />
+                    </Folder>
+                </Folder>
+                <Folder name="cody">
+                    <File name="C:\Users\Ben\Documents\GitHub\cs255Proj\dev\cody\contactform.html" />
+                </Folder>
+                <Folder name="nawaf">
+                    <File name="C:\Users\Ben\Documents\GitHub\cs255Proj\dev\nawaf\external.css" />
+                    <File name="C:\Users\Ben\Documents\GitHub\cs255Proj\dev\nawaf\main.html" />
+                </Folder>
+            </Folder>
+            <Folder name="documentation">
+                <File name="C:\Users\Ben\Documents\GitHub\cs255Proj\documentation\CIS255+CA2+PROJECT+PROGRESS+REPORT.docx" />
+            </Folder>
+            <File name="C:\Users\Ben\Documents\GitHub\cs255Proj\projectWorkspace" />
+        </Folder>
+    </Project>
+</NotepadPlus>

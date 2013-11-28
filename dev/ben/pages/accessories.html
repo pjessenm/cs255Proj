@@ -37,37 +37,35 @@
             
             <!-- begin sidebar !-->
             <div class="sidebar">
-                <div>
-                    <h3>By Manufacturer (<b data-bind="text: desktops.length"></b>)</h3>
+                <div data-bind="foreach: sections">
+                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
                 </div>
-
-                <ul class="" data-bind="foreach: desktops">
-                    <li><a data-bind="attr: { href: '../pages/computers' + $data + '.html' }, text:$data"></a></li>
-                </ul>
+				<div class='sideInfo'>
+					<h2>Contact us 24/7</h2>
+					<strong>compStore@cis255.com</strong><br/>
+					<strong>(123) 543-1235</strong><br/>
+					
+				</div>
             </div>
             <!-- end sidebar !-->
 
             <!-- begin main content !-->
             <div class="main-content">
-            <br>
-                <div class="container">
-                    <div data-bind="foreach: deskTopObs">
-                        <div class="computer-section">
-                            <h1 data-bind="text: name"></h1>
-                            <br/>
-                            <img data-bind="attr:{src: src}" width="100px">
-                            <div class="compSpecs">
-                            <label>Price: </label><strong data-bind="text:price"></strong><br/>
-                            <label>HDD: </label><strong data-bind="text:hdd"></strong><br/>
-                            <label>RAM: </label><strong data-bind="text:ram"></strong><br/>
-                            <label>CPU: </label><strong data-bind="text:cpu"></strong><br/>
-                                </div>
-                            <p data-bind="text: desc"></p>
-
-                        </div>
-                    </div>
-                </div>
-                <br><br><br>
+				<div class='faq'>
+					<tr>
+						<h1>FAQ</h1></td>
+					</tr>
+					<h2>Should I purchase a Windows or Apple computer?</h2>
+					<h3>Choose whichever you prefer: both platforms are supported on our webstore. </h3>
+					<h2>Do you accept PayPal payments?</h2>
+					<h3>Yes. We accept PayPal payments as long as they are made prior too or at the time of purchase.</h3>
+					<h2>How do I get more information?</h2>
+					<h3>Call us at 1-800-999-9999 to speak with a live representative who can answer all of your questions.</h3>
+				   <h2>How quickly will my order be processed?</h2>
+					<h3>Orders received before 5 p.m. local time are processed within two business days of payment authorization Please note that on occasion, such as during holiday rush and large sale events, there may be a slight delay in processing time. Your business is important to us, and we make every effort to process your order as quickly as possible. </h3>
+				   <h2>Are prices and promotions the same online as they are in stores?</h2>
+					<h3>Computer store prices, promotions and selections may differ from those at our authorized retailers. Prices and promotions (e.g., promotion codes or free shipping) offered online may not be used in stores, and store prices and promotions (e.g., coupons or additional discounts) may not be used online, unless otherwise stated. </h3>
+				</div>
             </div>
             <!-- end end content !-->
             
