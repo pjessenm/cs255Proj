@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <link href="../css/layout.css" rel="stylesheet" type="text/css">
+        <script src="../scripts/jquery.js"></script> 
+		<script src="../scripts/knockout.js"></script> 
+        <script src="../scripts/dropdown.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#navigation").navPlugin({
+                    'itemWidth': 150,
+                    'itemHeight': 30,
+                    'navEffect': "slide",
+                    'speed': 250
+                });
+            }); // end ready
+        </script>
+    </head>
+    <body>
+        <div class="inner-content">
+            <div class="topArea">
+				<!-- begin nav !-->
+				<div class="nav">
+					<a href="../pages/index.html"><img src="../images/compIcon.png" width=150px"/></a>
+					<ul id="navigation" >
+						<li class="menuItem"><a href="index.html"><img src="../icons/home.png"/>Home</a></li>
+						<li class="menuItem"><a href="computers.html"><img src="../icons/compu.png"/>Computers</a>
+							<ul data-bind="foreach:desktops">
+								<li class="droplink"><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
+							</ul>
+						</li>
+						<li class="menuItem"><a href="custom.html"><img src="../icons/cart.png"/>Custom</a></li>
+						<li class="menuItem"><a href="accessories.html"><img src="../icons/game.png"/>Accessories</a></li>
+						<li class="menuItem"><a href="contact.html"><img src="../icons/envelope.png"/>Contact</a></li>
+					</ul><br>
+					<h2 class="storeHeader">CIS255 Project Computer Store</h2>
+				</div>
+				<!-- end nav !-->
+			</div>
+            
+            <!-- begin sidebar !-->
+            <div class="sidebar">
+                <div>
+                    <h3>By Manufacturer (<b data-bind="text: desktops.length"></b>)</h3>
+                </div>
+                <ul class="" data-bind="foreach: desktops">
+                    <li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
+                </ul>
+				<div class='sideInfo'>
+					<h2>Contact us 24/7</h2>
+					<h4>compStore@cis255.com</h4>
+					<h4>(123) 543-1235</h4><br/>
+					<div class="sideIcons">
+						<img src="../images/facebook.png"/>
+						<img src="../images/twitter.png"/>
+						<img src="../images/instagram.png" />
+						<img src="../images/google-plus.png"/>
+						<img src="../images/pinterest.png"/>
+						<img src="../images/youtube.png"/>
+						<img src="../images/rss.png"/>
+					</div>
+					<img src="../images/payments.gif" width:100px;/>
+				</div>
+            </div>
+            <!-- end sidebar !-->
+
+            <!-- begin main content !-->
+            <div class="main-content">
+            <br>
+                <div class="container">
+                    <div data-bind="foreach: deskTopObs">
+                        <div class="computer-section">
+                            <h1 data-bind="text: name"></h1>
+                            <br/>
+                            <img data-bind="attr:{src: src}" width="100px">
+                            <div class="compSpecs">
+                            <label>Price: </label><strong data-bind="text:price"></strong><br/>
+                            <label>HDD: </label><strong data-bind="text:hdd"></strong><br/>
+                            <label>RAM: </label><strong data-bind="text:ram"></strong><br/>
+                            <label>CPU: </label><strong data-bind="text:cpu"></strong><br/>
+                                </div>
+                            <p data-bind="text: desc"></p>
+
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+            </div>
+            <!-- end end content !-->
+            
+        </div>
+        
+		<!-- knockout bindings -->
+		<script>
+			function AppViewModel() {
+				this.title = ko.observable("CIS255 Computer Store");			
+				this.sections  = ["Computers", "Custom", "Accessories", "Contact", "FAQ"];
+                this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
+                this.deskTopObs = [
+                    {
+                        name: "HP Desktop 1",
+                        src: "../computers/hp1.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 2",
+                        src: "../computers/hp2.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 3",
+                        src: "../computers/hp3.jpg",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 4",
+                        src: "../computers/hp4.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 5",
+                        src: "../computers/h5.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 6",
+                        src: "../computers/h6.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    }
+                ]
+			}
+
+			ko.applyBindings(new AppViewModel());
+		</script>
+		<!-- end knockout bindings -->
+    </body>
+</html>

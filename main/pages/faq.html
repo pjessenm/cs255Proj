@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <link href="../css/layout.css" rel="stylesheet" type="text/css">
+        <script src="../scripts/jquery.js"></script> 
+		<script src="../scripts/knockout.js"></script> 
+        <script src="../scripts/dropdown.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#navigation").navPlugin({
+                    'itemWidth': 150,
+                    'itemHeight': 30,
+                    'navEffect': "slide",
+                    'speed': 250
+                });
+            }); // end ready
+        </script>
+    </head>
+    <body>
+        <div class="inner-content">
+            <div class="topArea">        
+				<!-- begin nav !-->
+				<div class="nav">
+					<a href="../pages/index.html"><img src="../images/compIcon.png" width=150px"/></a>
+					<ul id="navigation" >
+						<li class="menuItem"><a href="index.html"><img src="../icons/home.png"/>Home</a></li>
+						<li class="menuItem"><a href="computers.html"><img src="../icons/compu.png"/>Computers</a>
+							<ul data-bind="foreach:desktops">
+								<li class="droplink"><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
+							</ul>
+						</li>
+						<li class="menuItem"><a href="custom.html"><img src="../icons/cart.png"/>Custom</a></li>
+						<li class="menuItem"><a href="contact.html"><img src="../icons/envelope.png"/>Contact</a></li>
+					</ul>
+				</div>       
+			</div>
+            <!-- end nav !-->
+            
+            <!-- begin sidebar !-->
+            <div class="sidebar">
+                <div data-bind="foreach: sections">
+                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                </div>
+				<div class='sideInfo'>
+					<h2>Contact us 24/7</h2>
+					<h4>compStore@cis255.com</h4>
+					<h4>(123) 543-1235</h4><br/>
+					<div class="sideIcons">
+						<img src="../images/facebook.png"/>
+						<img src="../images/twitter.png"/>
+						<img src="../images/instagram.png" />
+						<img src="../images/google-plus.png"/>
+						<img src="../images/pinterest.png"/>
+						<img src="../images/youtube.png"/>
+						<img src="../images/rss.png"/>
+					</div>
+					<img src="../images/payments.gif" width:100px;/>
+				</div>
+            </div>
+            <!-- end sidebar !-->
+
+            <!-- begin main content !-->
+            <div class="main-content">
+				<div class='faq'>
+					<tr>
+						<h1>FAQ</h1></td>
+					</tr>
+					<h2>Should I purchase a Windows or Apple computer?</h2>
+					<h3>Choose whichever you prefer: both platforms are supported on our webstore. </h3>
+					<h2>Do you accept PayPal payments?</h2>
+					<h3>Yes. We accept PayPal payments as long as they are made prior too or at the time of purchase.</h3>
+					<h2>How do I get more information?</h2>
+					<h3>Call us at 1-800-999-9999 to speak with a live representative who can answer all of your questions.</h3>
+				   <h2>How quickly will my order be processed?</h2>
+					<h3>Orders received before 5 p.m. local time are processed within two business days of payment authorization Please note that on occasion, such as during holiday rush and large sale events, there may be a slight delay in processing time. Your business is important to us, and we make every effort to process your order as quickly as possible. </h3>
+				   <h2>Are prices and promotions the same online as they are in stores?</h2>
+					<h3>Computer store prices, promotions and selections may differ from those at our authorized retailers. Prices and promotions (e.g., promotion codes or free shipping) offered online may not be used in stores, and store prices and promotions (e.g., coupons or additional discounts) may not be used online, unless otherwise stated. </h3>
+				</div>
+            </div>
+            <!-- end end content !-->
+            
+        </div>
+        
+		<!-- knockout bindings -->
+		<script>
+			function AppViewModel() {
+				this.title = ko.observable("CIS255 Computer Store");			
+				this.sections  = ["Computers", "Custom", "Contact", "FAQ"];
+                this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
+                this.deskTopObs = [
+                    {
+                        name: "HP Desktop 1",
+                        src: "../computers/hp1.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 2",
+                        src: "../computers/hp2.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 3",
+                        src: "../computers/hp3.jpg",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 4",
+                        src: "../computers/hp4.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 5",
+                        src: "../computers/h5.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    },
+                    {
+                        name: "HP Desktop 6",
+                        src: "../computers/h6.png",
+                        desc:"ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae",
+                        price:"$500",
+                        hdd:"1.5 TB",
+                        ram:"16gb",
+                        cpu:"3.4ghz"
+                    }
+                ]
+			}
+
+			ko.applyBindings(new AppViewModel());
+		</script>
+		<!-- end knockout bindings -->
+    </body>
+</html>
