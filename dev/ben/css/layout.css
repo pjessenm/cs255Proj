@@ -8,13 +8,6 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
     margin-right:10%;
 }
 
-.nav li{
-    margin:0;
-    height:15px !important;
-    list-style-type:none;
-	padding:10px 15px 10px 15px;
-}
-
 .dropLink a{
 	font-size:1em !important;
 	font-weight:100 !important;
@@ -34,20 +27,6 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
     display:inline;
 }
 
-.nav img{
-    display: inline-block;
-    height: auto;
-    max-width: 100%;
-    position: relative;
-    float:left;
-    padding-right:75px;
-}
-
-.nav-btn-group{
-    padding-top:50px;
-    margin-left:220px;
-}
-
 .topArea{
     max-height: 15%;
     padding-left:15px;
@@ -56,23 +35,6 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
     background-color:#d5e1dd;
     display:block;
     overflow:hidden;
-}
-
-
-.nav-btn-group a{
-    display: inline-block;
-    float:left;
-    position:relative;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    margin-right:4px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border:solid;
 }
 
 .sidebar{
@@ -408,7 +370,9 @@ td {
 }
 
 .navigation{
-    display:inline-block;
+	margin-top:50px;
+
+    display:inline;
 }
 
 #navigation ul, #navigation li {

@@ -20,23 +20,7 @@
             <div class="topArea">        
 				<!-- begin nav !-->
 				<div class="nav">
-                    <div class='title'>
-                        <h3 class='storeHeader'>CIS255</h3>
-                        <h2 class='storeHeader'>Computer</h2>
-                        <h3 class='storeHeader'>Store</h3>
-                    </div>
-                    <div class='navigation'>
-						<ul id="navigation" >
-							<li class="menuItem"><a href="index.html">Home</a></li>
-							<li class="menuItem"><a href="computers.html">Computers</a>
-								<ul data-bind="foreach:desktops">
-									<li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
-								</ul>
-							</li>
-							<li class="menuItem"><a href="custom.html">Custom</a></li>
-							<li class="menuItem"><a href="contact.html">Contact</a></li>
-						</ul><br>
-                    </div>
+					<h1 style='font-size:9em; text-align:center;'>CIS255 COMPUTER STORE</h1>
 				</div>  
 				
 			</div>
@@ -47,6 +31,7 @@
                 <div data-bind="foreach: sections">
                     <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
                 </div>
+				<!-- begin contact info section -->
 				<div class='sideInfo'>
 					<h2>Contact us 24/7</h2>
 					<h4>compStore@cis255.com</h4>
@@ -62,6 +47,7 @@
 					</div>
 					<img src="../images/payments.gif" width:100px;/>
 				</div>
+				<!-- end contact info section -->
             </div>
             <!-- end sidebar !-->
 

@@ -38,14 +38,23 @@
             
             <!-- begin sidebar !-->
             <div class="sidebar">
-                <div>
+				<div>
+					<h3>Sections</h3>
+				</div>
+                <div data-bind="foreach: sections">
+                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                </div>
+				
+				 <div>
                     <h3>By Manufacturer (<b data-bind="text: desktops.length"></b>)</h3>
                 </div>
 
-                <ul class="" data-bind="foreach: desktops">
+                <ul data-bind="foreach: desktops">
                     <li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
                 </ul>
-				<div class='sideInfo'>
+				
+				
+				<div class='sideInfo' style='margin-top:144px !important;'>
 					<h2>Contact us 24/7</h2>
 					<h4>compStore@cis255.com</h4>
 					<h4>(123) 543-1235</h4><br/>
@@ -61,7 +70,7 @@
 					<img src="../images/payments.gif" width:100px;/>
 				</div>
             </div>
-			<!-- end sidebar !-->
+            <!-- end sidebar !-->
 
             <!-- begin main content !-->
             <div class="main-content">
