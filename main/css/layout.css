@@ -8,13 +8,6 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
     margin-right:10%;
 }
 
-.nav li{
-    margin:0;
-    height:15px !important;
-    list-style-type:none;
-	padding:10px 15px 10px 15px;
-}
-
 .dropLink a{
 	font-size:1em !important;
 	font-weight:100 !important;
@@ -29,50 +22,13 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
 	padding:0 20px 2px 0;
 }
 
-.topArea h1{
-    margin-bottom:500px;
-    display:inline;
-}
-
-.nav img{
-    display: inline-block;
-    height: auto;
-    max-width: 100%;
-    position: relative;
-    float:left;
-    padding-right:75px;
-}
-
-.nav-btn-group{
-    padding-top:50px;
-    margin-left:220px;
-}
-
 .topArea{
     max-height: 15%;
     padding-left:15px;
     padding-right:15px;
     padding-bottom:15px;
-    background-color:#d5e1dd;
     display:block;
     overflow:hidden;
-}
-
-
-.nav-btn-group a{
-    display: inline-block;
-    float:left;
-    position:relative;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    margin-right:4px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border:solid;
 }
 
 .sidebar{
@@ -80,7 +36,6 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
     float:left;
     width:15%;
     height:80%;
-    background-color:#9B9B8C;
 	padding-top:10px;
 }
 
@@ -408,7 +363,9 @@ td {
 }
 
 .navigation{
-    display:inline-block;
+	margin-top:50px;
+
+    display:inline;
 }
 
 #navigation ul, #navigation li {
@@ -460,9 +417,11 @@ td {
 }
 
 .storeHeader{
-    width:200px;
+    width:95%;
     padding:0;
     margin:0;
+	margin-left:auto;
+	margin-right:auto;
     display:block;
 	color: #222;
 	text-shadow: 0px 2px 3px #555;
@@ -533,4 +492,14 @@ td {
 
 .statsTable td{
 	padding:1px;
+}
+
+.storeHeader{
+	font-size:9em;
+}
+
+.sectionsHeader{
+	font-size:.9em;
+	font-weight:900;
+	text-align:center;
 }

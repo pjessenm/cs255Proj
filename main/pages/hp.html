@@ -17,35 +17,33 @@
     </head>
     <body>
         <div class="inner-content">
-            <div class="topArea">
-				<!-- begin nav !-->
+			<!-- begin nav !-->
+            <div class="topArea">        
 				<div class="nav">
-					<a href="../pages/index.html"><img src="../images/compIcon.png" width=150px"/></a>
-					<ul id="navigation" >
-						<li class="menuItem"><a href="index.html"><img src="../icons/home.png"/>Home</a></li>
-						<li class="menuItem"><a href="computers.html"><img src="../icons/compu.png"/>Computers</a>
-							<ul data-bind="foreach:desktops">
-								<li class="droplink"><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
-							</ul>
-						</li>
-						<li class="menuItem"><a href="custom.html"><img src="../icons/cart.png"/>Custom</a></li>
-						<li class="menuItem"><a href="accessories.html"><img src="../icons/game.png"/>Accessories</a></li>
-						<li class="menuItem"><a href="contact.html"><img src="../icons/envelope.png"/>Contact</a></li>
-					</ul><br>
-					<h2 class="storeHeader">CIS255 Project Computer Store</h2>
-				</div>
-				<!-- end nav !-->
+					<a href="../pages/index.html"><h1 class='storeHeader'>CIS255 COMPUTER STORE</h1></a>
+				</div>  
 			</div>
+            <!-- end nav !-->
             
             <!-- begin sidebar !-->
             <div class="sidebar">
-                <div>
+				<div class='sectionsHeader'>
+					<h3>Sections</h3>
+				</div>
+                <div data-bind="foreach: sections">
+                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                </div>
+				
+				 <div>
                     <h3>By Manufacturer (<b data-bind="text: desktops.length"></b>)</h3>
                 </div>
-                <ul class="" data-bind="foreach: desktops">
+
+                <ul data-bind="foreach: desktops">
                     <li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
                 </ul>
-				<div class='sideInfo'>
+				
+				
+				<div class='sideInfo' style='margin-top:144px !important;'>
 					<h2>Contact us 24/7</h2>
 					<h4>compStore@cis255.com</h4>
 					<h4>(123) 543-1235</h4><br/>
@@ -93,7 +91,7 @@
 		<script>
 			function AppViewModel() {
 				this.title = ko.observable("CIS255 Computer Store");			
-				this.sections  = ["Computers", "Custom", "Accessories", "Contact", "FAQ"];
+				this.sections  = ["Computers", "Custom", "Contact", "FAQ"];
                 this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
                 this.deskTopObs = [
                     {
