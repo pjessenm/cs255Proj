@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+    <meta charset="utf-8">
         <link href="../css/layout.css" rel="stylesheet" type="text/css">
 		<link href="../css/jquery-ui.css" rel="stylesheet" type="text/css">
         <script src="../scripts/jquery.js"></script> 
@@ -81,7 +84,7 @@
 								<label>CPU: </label><strong data-bind="text:cpu"></strong><br/>
 							</div>
                             <p data-bind="text: desc"></p>
-							<a href="#" data-bind='click: $root.moreInfo.bind($data)' class='viewBuy'>View/Buy</a>
+							<a data-bind='click: $root.moreInfo.bind($data)' class='viewBuy'>View/Buy</a>
 
                         </div>
                     </div>
