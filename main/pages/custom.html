@@ -1,14 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-    <meta charset="utf-8">
+        <title>CIS255 Computer Store</title>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8">
         <link href="../css/layout.css" rel="stylesheet" type="text/css">
-        <script src="../scripts/jquery.js"></script> 
-		<script src="../scripts/knockout.js"></script> 
-        <script src="../scripts/dropdown.js"></script>
+        <script type="text/javascript" src="../scripts/jquery.js"></script>
+        <script type="text/javascript" src="../scripts/knockout.js"></script>
+        <script type="text/javascript" src="../scripts/dropdown.js"></script>
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $("#navigation").navPlugin({
                     'itemWidth': 150,
                     'itemHeight': 30,
@@ -16,129 +15,142 @@
                     'speed': 250
                 });
             }); // end ready
-            
+
             var total = 0.00;
             var proc = 0.00;
             var ram = 0.00;
             var os = 0.00;
             var hdd = 0.00;
-            
-            function calcTotal (name, amount){
-                if(name.toString() == 'OS'){
+
+            function calcTotal(name, amount) {
+                if (name.toString() == 'OS') {
                     os = amount;
                 }
-                
-                if(name.toString() == 'processors'){
+
+                if (name.toString() == 'processors') {
                     proc = amount;
                 }
-                
-                if(name.toString() == 'RAM'){
+
+                if (name.toString() == 'RAM') {
                     ram = amount;
                 }
-                
-                if(name.toString() == 'HD'){
+
+                if (name.toString() == 'HD') {
                     hdd = amount;
                 }
-                
+
                 total = os + proc + ram + hdd;
                 $("#total").val('$' + total);
-                
+
             };
         </script>
-    </head>
-    <body>
-        <div class="inner-content">
-			<!-- begin nav !-->
-            <div class="topArea">        
-				<div class="nav">
-					<a href="index.html"><h1 class='storeHeader'>CIS255 COMPUTER STORE</h1></a>
-				</div>  
-			</div>
-            <!-- end nav !-->
-            
-            <!-- begin sidebar !-->
-            <div class="sidebar">
-                <div class="" data-bind="foreach: sections">
-                    <a data-bind="attr: { href: $data + '.html' }, text:$data"></a><br/>
-                </div>
-				<div class='sideInfo'>
-					<h2>Contact us 24/7</h2>
-					<h4>compStore@cis255.com</h4>
-					<h4>(123) 543-1235</h4><br/>
-					<div class="sideIcons">
+</head>
+<body>
+    <div class="inner-content">
+        <!-- begin nav !-->
+        <div class="topArea">
+            <div class="nav">
+                <a href="index.html">
+                    <h1 class='storeHeader'>CIS255 COMPUTER STORE</h1>
+                </a>
+            </div>
+        </div>
+        <!-- end nav !-->
+
+        <!-- begin sidebar !-->
+        <div class="sidebar">
+            <div class="" data-bind="foreach: sections">
+                <a data-bind="attr: { href: $data + '.html' }, text: $data"></a>
+                <br />
+            </div>
+            <div class='sideInfo'>
+                <h2>Contact us 24/7</h2>
+                <h4>compStore@cis255.com</h4>
+                <h4>(123) 543-1235</h4>
+                <br />
+                <div class="sideIcons">
 						<img src="../images/facebook.png"/>
 						<img src="../images/twitter.png"/>
 						<img src="../images/instagram.png" />
-						<img src="../images/google-plus.png"/>
-						<img src="../images/pinterest.png"/>
-						<img src="../images/youtube.png"/>
 						<img src="../images/rss.png"/>
-					</div>
-					<img src="../images/payments.gif" width:100px;/>
-				</div>
-				
+                </div>
+                <img src="../images/payments.gif" width="100px" alt="image" />
             </div>
-            <!-- end sidebar !-->
 
-            <!-- begin main content !-->
-            <div class="main-content">
+        </div>
+        <!-- end sidebar !-->
+
+        <!-- begin main content !-->
+        <div class="main-content">
             <br>
-                <div class="container">
-  
-				<!-- product table -->
-				<table id="sampletable" class='sampleTable'>
-					<tr>
-						<th>Operating System</th>
-						<th>Processor</th>
-						<th>RAM</th>
-						<th>Hard Drive</th>	
-					</tr>
-					<tr>
-						<td><input type="radio" name="OS" onclick='calcTotal(name, 250)'/>Windows 7 Home $250</td>
-						<td><input type="radio" name="processors" onclick='calcTotal(name, 199)'/>Intel i7 $199</td>
-						<td><input type="radio" name="RAM" onclick='calcTotal(name, 45)'/>4 GB $45</td>
-						<td><input type="radio" name="HD" onclick='calcTotal(name, 45)'/>200 GB $45</td>
-					</tr>
-					<tr>
-						<td><input type="radio" name="OS" onclick='calcTotal(name, 444)'/>Windows 8 $444</td>
-						<td><input type="radio" name="processors" onclick='calcTotal(name, 113)'/>Intel i3 $113</td>
-						<td><input type="radio" name="RAM" onclick='calcTotal(name, 104)'/>8 GB $104</td>
-						<td><input type="radio" name="HD" onclick='calcTotal(name, 45)'/>500 GB $45</td>
-					</tr>
-					<tr>
-						<td><input type="radio" name="OS" onclick='calcTotal(name, 443)'/>Windows XP $443</td>
-						<td><input type="radio" name="processors" onclick='calcTotal(name, 145)'/>Intel i5 $145</td>
-						<td><input type="radio" name="RAM" onclick='calcTotal(name, 32)'/>6GB $32</td>
-						<td><input type="radio" name="HD" onclick='calcTotal(name, 44)'/>750GB $44</td>
-					</tr>	
-				</table>				
-                <br/><br/>
-                
+            <div class="container">
+
+                <!-- product table -->
+                <table id="sampletable" class='sampleTable'>
+                    <tr>
+                        <th>Operating System</th>
+                        <th>Processor</th>
+                        <th>RAM</th>
+                        <th>Hard Drive</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="OS" onclick='calcTotal(name, 250)' />Windows 7 Home $250</td>
+                        <td>
+                            <input type="radio" name="processors" onclick='calcTotal(name, 199)' />Intel i7 $199</td>
+                        <td>
+                            <input type="radio" name="RAM" onclick='calcTotal(name, 45)' />4 GB $45</td>
+                        <td>
+                            <input type="radio" name="HD" onclick='calcTotal(name, 45)' />200 GB $45</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="OS" onclick='calcTotal(name, 444)' />Windows 8 $444</td>
+                        <td>
+                            <input type="radio" name="processors" onclick='calcTotal(name, 113)' />Intel i3 $113</td>
+                        <td>
+                            <input type="radio" name="RAM" onclick='calcTotal(name, 104)' />8 GB $104</td>
+                        <td>
+                            <input type="radio" name="HD" onclick='calcTotal(name, 45)' />500 GB $45</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="OS" onclick='calcTotal(name, 443)' />Windows XP $443</td>
+                        <td>
+                            <input type="radio" name="processors" onclick='calcTotal(name, 145)' />Intel i5 $145</td>
+                        <td>
+                            <input type="radio" name="RAM" onclick='calcTotal(name, 32)' />6GB $32</td>
+                        <td>
+                            <input type="radio" name="HD" onclick='calcTotal(name, 44)' />750GB $44</td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+
                 <div>
-                    
                 </div>
                 <div class="pull-right">
-                    <Label><strong>Total:</strong></Label><input type='text' disabled='disabled' id='total'></input>
+                    <label><strong>Total:</strong></label><input type='text' disabled='disabled' id='total'></input>
                 </div>
-                
-                </div>
+
             </div>
-            <!-- end end content !-->
-            
         </div>
-        
-		<!-- knockout bindings -->
-		<script>
-            
-            
-			function AppViewModel() {
-				this.title = ko.observable("CIS255 Computer Store");			
-				this.sections  = ["Computers", "Custom", "Contact", "FAQ"];
-                this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
-            }
-			ko.applyBindings(new AppViewModel());
-            
-		</script>
-		<!-- end knockout bindings -->
-    </body>
+        <!-- end end content !-->
+
+    </div>
+
+    <!-- knockout bindings -->
+    <script>
+
+
+        function AppViewModel() {
+            this.title = ko.observable("CIS255 Computer Store");
+            this.sections = ["Computers", "Custom", "Contact", "FAQ"];
+            this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
+        }
+        ko.applyBindings(new AppViewModel());
+
+    </script>
+    <!-- end knockout bindings -->
+</body>
 </html>

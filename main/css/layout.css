@@ -3,9 +3,9 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
 }
 
 .inner-content{
-    margin-left:10%;
-    width:80%;
-    margin-right:10%;
+    margin-left:5%;
+    width:90%;
+    margin-right:5%;
 }
 
 .dropLink a{
@@ -51,6 +51,10 @@ font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;  fo
 .sidebar a{
     color:2b3e42;   
     font-size:2em;    
+}
+
+.types a{
+    font-size:1em;
 }
 
 .sidebar button{
@@ -346,6 +350,11 @@ table {
     margin-right:auto;
     display:block;
 }
+
+tbody{
+    width:100%;
+}
+
 /*table th td*/
 table, th, td {
 	border: 1px solid #39F;
@@ -390,7 +399,7 @@ td {
 
 .sideInfo{
 	position:absolute;
-	margin-top:350px;
+	margin-top:250px;
 	font-size:1.1em;
 	padding-left:10px;
 	text-align:center;
@@ -454,7 +463,8 @@ td {
 }
 
 .storeHeader{
-	font-size:8.55em;
+    width:95%;
+	font-size:6em;
 }
 
 .sectionsHeader{
