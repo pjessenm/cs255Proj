@@ -445,7 +445,7 @@ td {
 .compModal{
 	background-color:white;
 	border:solid;
-	border:width:1px;
+	border-width:1px;
 	display:none;
 }
 
