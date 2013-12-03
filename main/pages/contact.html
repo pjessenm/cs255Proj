@@ -39,7 +39,7 @@
             <!-- begin sidebar !-->
             <div class="sidebar">
                 <div data-bind="foreach: sections">
-                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                    <a data-bind="attr: { href: $data + '.html' }, text:$data"></a><br/>
                 </div>
 				<!-- begin contact info section -->
 				<div class='sideInfo'>

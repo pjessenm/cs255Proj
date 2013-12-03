@@ -51,7 +51,7 @@
 			<!-- begin nav !-->
             <div class="topArea">        
 				<div class="nav">
-					<a href="../pages/index.html"><h1 class='storeHeader'>CIS255 COMPUTER STORE</h1></a>
+					<a href="index.html"><h1 class='storeHeader'>CIS255 COMPUTER STORE</h1></a>
 				</div>  
 			</div>
             <!-- end nav !-->
@@ -59,7 +59,7 @@
             <!-- begin sidebar !-->
             <div class="sidebar">
                 <div class="" data-bind="foreach: sections">
-                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                    <a data-bind="attr: { href: $data + '.html' }, text:$data"></a><br/>
                 </div>
 				<div class='sideInfo'>
 					<h2>Contact us 24/7</h2>
@@ -86,7 +86,7 @@
                 <div class="container">
   
 				<!-- product table -->
-				<table id="sampletable">
+				<table id="sampletable" class='sampleTable'>
 					<tr>
 						<th>Operating System</th>
 						<th>Processor</th>

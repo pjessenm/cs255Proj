@@ -4,17 +4,21 @@
     <head>
     <meta charset="utf-8">
         <link href="../css/layout.css" rel="stylesheet" type="text/css">
+		<link href="../css/jquery-ui.css" rel="stylesheet" type="text/css">
         <script src="../scripts/jquery.js"></script> 
 		<script src="../scripts/knockout.js"></script> 
         <script src="../scripts/dropdown.js"></script>
+		<script src="../scripts/jquery-ui.js"></script>
         <script>
             $(document).ready(function() {
+			
                 $("#navigation").navPlugin({
                     'itemWidth': 150,
                     'itemHeight': 30,
                     'navEffect': "slide",
                     'speed': 250
                 });
+				
             }); // end ready
         </script>
     </head>
@@ -23,18 +27,15 @@
 			<!-- begin nav !-->
             <div class="topArea">        
 				<div class="nav">
-					<a href="../pages/index.html"><h1 class='storeHeader'>CIS255 COMPUTER STORE</h1></a>
+					<a href="index.html"><h1 class='storeHeader'>CIS255 COMPUTER STORE</h1></a>
 				</div>  
 			</div>
             <!-- end nav !-->
             
             <!-- begin sidebar !-->
             <div class="sidebar">
-				<div>
-					<h3>Sections</h3>
-				</div>
                 <div data-bind="foreach: sections">
-                    <button><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></button>
+                    <a data-bind="attr: { href: $data + '.html' }, text:$data"></a><br/>
                 </div>
 				
 				 <div>
@@ -42,7 +43,7 @@
                 </div>
 
                 <ul data-bind="foreach: desktops">
-                    <li><a data-bind="attr: { href: '../pages/' + $data + '.html' }, text:$data"></a></li>
+                    <li><a data-bind="attr: { href: $data + '.html' }, text:$data"></a></li>
                 </ul>
 				
 				
@@ -74,12 +75,13 @@
                             <br/>
                             <img data-bind="attr:{src: src}" width="100px">
                             <div class="compSpecs">
-                            <label>Price: </label><strong data-bind="text:price"></strong><br/>
-                            <label>HDD: </label><strong data-bind="text:hdd"></strong><br/>
-                            <label>RAM: </label><strong data-bind="text:ram"></strong><br/>
-                            <label>CPU: </label><strong data-bind="text:cpu"></strong><br/>
-                                </div>
+								<strong data-bind="text:price"></strong><br/>
+								<strong data-bind="text:hdd"></strong><br/>
+								<strong data-bind="text:ram"></strong><br/>
+								<strong data-bind="text:cpu"></strong><br/>
+							</div>
                             <p data-bind="text: desc"></p>
+							<a data-bind='click: $root.moreInfo.bind($data)' class='viewBuy'>View/Buy</a>
 
                         </div>
                     </div>
@@ -89,13 +91,124 @@
             <!-- end end content !-->
             
         </div>
+		
+		<div id="dialog-modal" class='compModal'>
+			<div class='col-4'>
+				<img data-bind='attr:{src: selectedImg()}' width="400px">
+			</div>
+			<div class='col-4 col-offset-1'>
+				<h5 data-bind='text: selectedPrice'></h5>
+				<strong data-bind='text:selectedHdd'></strong><br/>
+				<strong data-bind='text:selectedRam'></strong><br/>
+				<strong data-bind='text:selectedCpu'></strong><br/>
+				<h4 data-bind='text: selectedDesc'></h4>
+			</div>
+			<div class='statsTable col-12'>
+				<table>
+					<tr>
+						<td>Brand</td>
+						<td data-bind=text:selectedDetails().Brand></td>
+					</tr>
+					<tr>
+						<td>Model</td>
+						<td data-bind=text:selectedDetails().Model></td>
+					</tr>
+					<tr>
+						<td>Form</td>
+						<td data-bind=text:selectedDetails().Form></td>
+					</tr>
+					<tr>
+						<td>Processor</td>
+						<td data-bind=text:selectedDetails().Processor></td>
+					</tr>
+					<tr>
+						<td>Processor Features</td>
+						<td data-bind=text:selectedDetails().ProcessorFeatures></td>
+					</tr>
+					<tr>
+						<td>Cache</td>
+						<td data-bind=text:selectedDetails().Cache></td>
+					</tr>
+					<tr>
+						<td>Hard Drive</td>
+						<td data-bind=text:selectedDetails().Hard></td>
+					</tr>
+					<tr>
+						<td>Optical Drive</td>
+						<td data-bind=text:selectedDetails().Optical></td>
+					</tr>
+					<tr>
+						<td>Graphics</td>
+						<td data-bind=text:selectedDetails().Graphics></td>
+					</tr>
+					<tr>
+						<td>Audio</td>
+						<td data-bind=text:selectedDetails().Audio></td>
+					</tr>
+					<tr>
+						<td>Ethernet</td>
+						<td data-bind=text:selectedDetails().Ethernet></td>
+					</tr>
+					<tr>
+						<td>Power</td>
+						<td data-bind=text:selectedDetails().Power></td>
+					</tr>
+					<tr>
+						<td>Keyboard</td>
+						<td data-bind=text:selectedDetails().Keyboard></td>
+					</tr>
+					<tr>
+						<td>Mouse</td>
+						<td data-bind=text:selectedDetails().Mouse></td>
+					</tr>
+					<tr>
+						<td>OS</td>
+						<td data-bind=text:selectedDetails().OS></td>
+					</tr>
+					
+					
+				</table>
+			</div>
+		</div>
         
 		<!-- knockout bindings -->
 		<script>
+		
+		
+			selectedName = ko.observable();
+			selectedDesc = ko.observable();
+			selectedPrice = ko.observable();
+			selectedImg = ko.observable();
+			selectedHdd  = ko.observable();
+			selectedRam = ko.observable();
+			selectedCpu = ko.observable();
+			selectedDetails = ko.observableArray();
+		
 			function AppViewModel() {
 				this.title = ko.observable("CIS255 Computer Store");			
 				this.sections  = ["Computers", "Custom", "Contact", "FAQ"];
                 this.desktops = ["HP", "Dell", "Lenovo", "Sony", "ASUS", "Acer"];
+				this.moreInfo = function (selectedComp) {
+				
+					console.log(selectedComp);
+					
+					selectedName(selectedComp.name);
+					selectedDesc(selectedComp.desc);
+					selectedPrice(selectedComp.price);
+					selectedImg(selectedComp.src);
+					selectedHdd(selectedComp.hdd);
+					selectedRam(selectedComp.ram);
+					selectedCpu(selectedComp.cpu);
+					selectedDetails(selectedComp.extraDetails);
+					console.log(selectedDetails());
+					
+					$( "#dialog-modal" ).dialog({
+						height: 700,
+						width:1000,
+						modal: true,
+						title: selectedName() + ' - ' + selectedPrice()
+					});
+					};
                 this.deskTopObs = [
                     {
                         name: "Asus Desktop 1",
@@ -104,7 +217,25 @@
                         price:"$500",
                         hdd:"1.5 TB",
                         ram:"16gb",
-                        cpu:"3.4ghz"
+                        cpu:"3.4ghz",
+						extraDetails: {
+							Brand: 'ASUS',
+							Model: 'M11AA-US002Q',
+							Form: 'Tower',
+							Processor: 'Intel Core i3-3220T 2.8GHz',
+							ProcessorFeatures: '64 bit Dual Core Processor',
+							Cache: '3MB L3 Cache',
+							Memory: '4GB DDR3 1600',
+							Hard:'1TB 7200RPM',
+							Optical:'24x DVD-RW',
+							Graphics:'Intel HD Graphics 2500',
+							Audio:'SonicMaster 8 Channel Audio',
+							Ethernet:'Gigabit Ethernet',
+							Power:'300W',
+							Keyboard:'Keyboard (USB)',
+							Mouse:'Mouse (USB)',
+							OS:'Windows 7 Professional'
+						}
                     },
                     {
                         name: "Asus Desktop 2",
@@ -113,7 +244,25 @@
                         price:"$500",
                         hdd:"1.5 TB",
                         ram:"16gb",
-                        cpu:"3.4ghz"
+                        cpu:"3.4ghz",
+						extraDetails: {
+							Brand: 'ASUS',
+							Model: 'M11AA-US002Q',
+							Form: 'Tower',
+							Processor: 'Intel Core i3-3220T 2.8GHz',
+							ProcessorFeatures: '64 bit Dual Core Processor',
+							Cache: '3MB L3 Cache',
+							Memory: '4GB DDR3 1600',
+							Hard:'1TB 7200RPM',
+							Optical:'24x DVD-RW',
+							Graphics:'Intel HD Graphics 2500',
+							Audio:'SonicMaster 8 Channel Audio',
+							Ethernet:'Gigabit Ethernet',
+							Power:'300W',
+							Keyboard:'Keyboard (USB)',
+							Mouse:'Mouse (USB)',
+							OS:'Windows 7 Professional'
+						}
                     },
                     {
                         name: "Asus Desktop 3",
@@ -122,7 +271,25 @@
                         price:"$500",
                         hdd:"1.5 TB",
                         ram:"16gb",
-                        cpu:"3.4ghz"
+                        cpu:"3.4ghz",
+						extraDetails: {
+							Brand: 'ASUS',
+							Model: 'M11AA-US002Q',
+							Form: 'Tower',
+							Processor: 'Intel Core i3-3220T 2.8GHz',
+							ProcessorFeatures: '64 bit Dual Core Processor',
+							Cache: '3MB L3 Cache',
+							Memory: '4GB DDR3 1600',
+							Hard:'1TB 7200RPM',
+							Optical:'24x DVD-RW',
+							Graphics:'Intel HD Graphics 2500',
+							Audio:'SonicMaster 8 Channel Audio',
+							Ethernet:'Gigabit Ethernet',
+							Power:'300W',
+							Keyboard:'Keyboard (USB)',
+							Mouse:'Mouse (USB)',
+							OS:'Windows 7 Professional'
+						}
                     },
                     {
                         name: "Asus Desktop 4",
@@ -131,7 +298,25 @@
                         price:"$500",
                         hdd:"1.5 TB",
                         ram:"16gb",
-                        cpu:"3.4ghz"
+                        cpu:"3.4ghz",
+						extraDetails: {
+							Brand: 'ASUS',
+							Model: 'M11AA-US002Q',
+							Form: 'Tower',
+							Processor: 'Intel Core i3-3220T 2.8GHz',
+							ProcessorFeatures: '64 bit Dual Core Processor',
+							Cache: '3MB L3 Cache',
+							Memory: '4GB DDR3 1600',
+							Hard:'1TB 7200RPM',
+							Optical:'24x DVD-RW',
+							Graphics:'Intel HD Graphics 2500',
+							Audio:'SonicMaster 8 Channel Audio',
+							Ethernet:'Gigabit Ethernet',
+							Power:'300W',
+							Keyboard:'Keyboard (USB)',
+							Mouse:'Mouse (USB)',
+							OS:'Windows 7 Professional'
+						}
                     },
                     {
                         name: "Asus Desktop 5",
@@ -140,7 +325,25 @@
                         price:"$500",
                         hdd:"1.5 TB",
                         ram:"16gb",
-                        cpu:"3.4ghz"
+                        cpu:"3.4ghz",
+						extraDetails: {
+							Brand: 'ASUS',
+							Model: 'M11AA-US002Q',
+							Form: 'Tower',
+							Processor: 'Intel Core i3-3220T 2.8GHz',
+							ProcessorFeatures: '64 bit Dual Core Processor',
+							Cache: '3MB L3 Cache',
+							Memory: '4GB DDR3 1600',
+							Hard:'1TB 7200RPM',
+							Optical:'24x DVD-RW',
+							Graphics:'Intel HD Graphics 2500',
+							Audio:'SonicMaster 8 Channel Audio',
+							Ethernet:'Gigabit Ethernet',
+							Power:'300W',
+							Keyboard:'Keyboard (USB)',
+							Mouse:'Mouse (USB)',
+							OS:'Windows 7 Professional'
+						}
                     },
                     {
                         name: "Asus Desktop 6",
@@ -149,7 +352,25 @@
                         price:"$500",
                         hdd:"1.5 TB",
                         ram:"16gb",
-                        cpu:"3.4ghz"
+                        cpu:"3.4ghz",
+						extraDetails: {
+							Brand: 'ASUS',
+							Model: 'M11AA-US002Q',
+							Form: 'Tower',
+							Processor: 'Intel Core i3-3220T 2.8GHz',
+							ProcessorFeatures: '64 bit Dual Core Processor',
+							Cache: '3MB L3 Cache',
+							Memory: '4GB DDR3 1600',
+							Hard:'1TB 7200RPM',
+							Optical:'24x DVD-RW',
+							Graphics:'Intel HD Graphics 2500',
+							Audio:'SonicMaster 8 Channel Audio',
+							Ethernet:'Gigabit Ethernet',
+							Power:'300W',
+							Keyboard:'Keyboard (USB)',
+							Mouse:'Mouse (USB)',
+							OS:'Windows 7 Professional'
+						}
                     }
                 ]
 			}
