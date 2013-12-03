@@ -299,7 +299,7 @@ a:hover{
 .computer-section {
     position:relative;
     float:left;
-    width:33%;
+    width:30%;
     margin-bottom:50px;
 }
 
@@ -450,7 +450,7 @@ td {
 }
 
 .viewBuy{
-	margin-left:150px;
+	margin-left:100px;
 }
 
 .statsTable{
